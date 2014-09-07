@@ -1,7 +1,32 @@
-<h3>Home</h3>
-<p>Hi, my name is <%= @owner.name %>. </p>
-<p>I was born on <%= @owner.birthdate %>. </p>
-<p>Only <%= @owner.countdown %> days until my birthday! </p>
+<% content_for :title do %>Hoan Cai<% end %>
+<% content_for :description do %>Hoan Cai Homepage <% end %>
 
 
+<section>
+<div class="row">
 
+<img src="https://media.licdn.com/media/p/3/000/248/309/069aa49.jpg">
+
+<h2>About Me</h2>
+<p>Hoan currently lives in Pleasant Hill, CA and is originally from San Jose, CA. He attended the University of the Pacific and graduate with a degree Bachelors of Science in Electrical Engineering and a Minor in Engineering Management. During his time at UOP, he worked at GAF Inc. and CDM focusing on Instrumentation and Controls engineering. As he progressed in his career he also obtained his CISSP certification which made him an asset in cyber and information security fore-front. He is currently employed with Scwheitzer Engineering Laboratories in Vacaville, CA as the Automation Lead Engineer.</p>
+</div>
+</section>
+
+<br/>
+
+<section>
+	
+	<div class="row">
+	
+	<h2>Suscribe to my updates!</h2>
+		<div class="form">
+			<%= simple_form_for @visitor do |f| %>
+				<%= f.error_notification %>
+				<%= f.input :email, label: false, :placeholder => 'Your e-mail address...' %>
+				<br/>
+				<%= f.button :submit, "Sign up for updates!", :class => "submit" %>
+
+		<% end %>
+		</div>
+	</div>
+</section>
